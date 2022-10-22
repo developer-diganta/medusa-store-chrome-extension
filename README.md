@@ -1,70 +1,90 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Medusa Store Chrome Extension
+[![simple-cover-template-3-1.jpg](https://i.postimg.cc/rwsvNdYN/simple-cover-template-3-1.jpg)](https://postimg.cc/XrMHVvWr)
 
-In the project directory, you can run:
+## About
 
-### `npm start`
+### Participants
+Diganta Kr Banik - @developer-diganta
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[Twitter](https://twitter.com/banik_diganta)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Discord - Diganta_07#0285
 
-### `npm test`
+### Description
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A configurable starter-template for a store-front chrome extension for any project using Medusa. It includes checking your orders and editing your account.
 
-### `npm run build`
+### Preview
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Demo](https://i.postimg.cc/5t7M3vwx/Medusa-Demo.gif)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Set up Project
 
-### `npm run eject`
+### Prerequisites
+Before you start with the tutorial make sure you have
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [Node.js](https://nodejs.org/en/) v14 or greater installed on your machine
+- [Yarn](https://yarnpkg.com/getting-started/install)
+- [Medusa Starter Pack with 3 main components - Backend, Store Front and Admin](https://docs.medusajs.com/usage/create-medusa-app)
+- [Google Chrome Browser]()
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Install Project
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Clone the repository:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git clone https://github.com/developer-diganta/medusa-store-chrome-extension
+```
 
-## Learn More
+2. Go to the directory where you installed the medusa starter pack and from there go medusa.config file inside backend. There change the value for STORE_CORS as follows and save it:
+```
+const STORE_CORS = process.env.STORE_CORS || "chrome-extension://bpbeeekopgpgnlbecnpjpgdjmocaehmo,chrome-extension://bpbeeekopgpgnlbecnpjpgdjmocaehmo/index.html,http://localhost:8000,http://localhost:8001";
+```
+Note: If your chrome extension does not get connected to backend, change the id after chrome-extension in the above variable to the id of the extension your browser shows.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Now start the backend server by going to backend folder and using:
+```
+yarn start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. If you want you can also start the store-front and admin as mentioned in docs or as follows:
+ 1. For store-front go to store-front folder and then inside package.json first edit the "dev" inside scripts as:
+```
+ "dev": "next dev -p 8001"
+ ```
+ 2.Now run yarn run dev
+ 3. For admin, go to admin folder and run:
+```
+yarn start
+```
+ 4. Now backend,store-front and admin are running on their respective ports.
 
-### Code Splitting
+5. Change directory to the cloned folder and install dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+cd medusa-store-chrome-extension
+yarn
+```
+6.  Go to env file and add ```PORT=8000```. Start the app
+```
+yarn start
+```
+7. You should see a blank screen on port 8000. Now edit the address to localhost:8000/index.html. Incase it is running on a different port, be sure to add to the the env file in backend as in step 2.
 
-### Analyzing the Bundle Size
+8. Now to check the extension, run:
+```
+yarn run build
+```
+9.Now go to chrome and click on extensions from settings and go to manage extensions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+10. Enable developer mode on the top-right and then select load unpacked. Select the build folder which you recently build.
 
-### Making a Progressive Web App
+11. The extension should now be available.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Resources
+- [Medusa’s GitHub repository](https://github.com/medusajs/medusa)
+- [Medusa Documentation](https://docs.medusajs.com/)
+- [Extensions documentation](https://developer.chrome.com/docs/extensions/)
