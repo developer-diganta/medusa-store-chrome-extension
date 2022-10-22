@@ -1,0 +1,24 @@
+{
+  "short_name": "Medusa Store Chrome Extension",
+  "name": "medusa",
+  "manifest_version": 3,
+	"version":"1.0",
+    "description":"A store extension for customers to view and manage their accounts and orders", 
+    "icons": { "128":"medusa-extension.png" },
+    "action": {
+        "default_popup": "index.html"
+    },
+    "host_permissions": [
+        "https://*/*",
+        "http://*/*"
+    ],
+    "permissions":[
+        "cookies",
+        "storage",
+        "activeTab",
+        "tabs",
+        "webNavigation",
+        "webRequest",
+        "contextMenus"
+    ]
+}
