@@ -68,7 +68,7 @@ yarn start
 cd medusa-store-chrome-extension
 yarn
 ```
-6.  Go to env file and add ```PORT=8000```. Start the app
+6.  Go to env file and add ```PORT=8000```. Also add ```INLINE_RUNTIME_CHUNK=false``` to it. Start the app
 ```
 yarn start
 ```
@@ -88,3 +88,4 @@ yarn run build
 - [Medusa’s GitHub repository](https://github.com/medusajs/medusa)
 - [Medusa Documentation](https://docs.medusajs.com/)
 - [Extensions documentation](https://developer.chrome.com/docs/extensions/)
+- [React](https://reactjs.org/)
