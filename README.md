@@ -18,7 +18,7 @@ A configurable starter-template for a store-front chrome extension for any proje
 
 ### Preview
 
-![Demo](https://i.postimg.cc/5t7M3vwx/Medusa-Demo.gif)
+![Demo](https://github.com/developer-diganta/medusa-store-chrome-extension/blob/main/MedusaDemo.gif)
 
 
 ## Set up Project
